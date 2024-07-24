@@ -87,7 +87,7 @@ class CrontabSchedule implements ScheduleInterface
     {
         if ($this->parts['min'] != '*') {
             foreach ($this->parseRule($this->parts['min'], 0, 59) as $value) {
-                if ($now->format('i') == $value || $now->format('s') == $value) {
+                if ($now->format('i') == $value) {
                     return true;
                 }
             }
